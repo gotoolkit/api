@@ -22,6 +22,9 @@ func main() {
 	c := NewOperandsController(service)
 	app.MountOperandsController(service, c)
 
+	cs := NewSwaggerController(service)
+	app.MountSwaggerController(service, cs)
+
 	// Start service
 	if err := service.ListenAndServe(":8080"); err != nil {
 		service.LogError("startup", "err", err)

@@ -24,3 +24,10 @@ var _ = Resource("operands", func() {
 	})
 
 })
+
+var _ = Resource("swagger", func() {
+	Origin("*", func() {
+		Methods("GET") // Allow all origins to retrieve the Swagger JSON (CORS)
+	})
+	Files("/swagger.json", "swagger/swagger.json")
+})

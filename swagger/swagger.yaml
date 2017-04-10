@@ -35,6 +35,17 @@ paths:
       summary: add operands
       tags:
       - operands
+  /swagger.json:
+    get:
+      operationId: swagger#/swagger.json
+      responses:
+        "200":
+          description: File downloaded
+          schema:
+            type: file
+      schemes:
+      - http
+      summary: Download swagger/swagger.json
 produces:
 - application/json
 - application/xml
